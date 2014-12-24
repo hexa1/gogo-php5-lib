@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project default="dist">
+  <property file="./build.properties" />
+
+  <property name="app.phar" value="${app.phar.name}-${app.version}.phar"/>
+
+  <target name="build">
+    <delete dir="./build" />
+    <mkdir dir="./build" />
+    <copy todir="./build">
+      <fileset dir=".">
+        <include name="classes/" />
+        <include name="vendor/" />
+      </fileset>
+    </copy>
+  </target>
+
+  <target name="dist" depends="build">
+    <delete file="./dist/${app.phar}" />
+    <pharpackage
+      destfile="./dist/${app.phar}"
+      basedir="./build"
+      compression="gzip"
+      stub="./stub.php"
+      signature="sha1">
+      <fileset dir="./build">
+        <include name="**/**" />
+      </fileset>
+      <metadata>
+        <element name="version" value="${app.version}" />
+        <element name="authors">
+          <element name="${app.author}">
+            <element name="email" value="${app.author.email}" />
+          </element>
+        </element>
+      </metadata>
+    </pharpackage>
+  </target>
+</project>

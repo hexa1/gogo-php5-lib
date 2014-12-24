@@ -1,0 +1,9 @@
+{
+    "require": {
+      "anahkiasen/underscore-php" : "dev-master"
+    },
+
+    "autoload": {
+      "psr-4": {"app\\": "classes/"}
+    }
+}
