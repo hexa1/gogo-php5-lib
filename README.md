@@ -1,6 +1,6 @@
 # A bootstrap of a PHP5 library packaged as a Phar
 
-A starting point for a PHP5 object-oriented library (with namespacing).
+A starting point for a PHP5 object-oriented library (with namespacing) which is to be distributed via a .phar file.
 
 **Includes**:
 
@@ -10,7 +10,7 @@ A starting point for a PHP5 object-oriented library (with namespacing).
 - phing: isolated project properties
 - CHANGES, LICENSE
 - composer
-- Sample library loaded via composer (underscore.php)
+- sample library loaded via composer (underscore.php)
 - phing task for generating Phar file
 - 2 test files: the api in `classes` dir, and api in the phar file
 - distributable phar example
